@@ -7,10 +7,10 @@ const randomstring = require("randomstring");
     const password = randomstring.generate();
     const salt = randomstring.generate();
     crypto.pbkdf2(password, salt, 10000, 512, "sha512",(err,encryptHash) => {
-      console.log("encryptHash", encryptHash);
+      //console.log("encryptHash", encryptHash);
     });
     crypto.pbkdf2(password, salt, 10000, 512, "sha512",(err,encryptHash) => {
-      console.log("encryptHash2", encryptHash);
+      //console.log("encryptHash2", encryptHash);
     });
   }
 })();
