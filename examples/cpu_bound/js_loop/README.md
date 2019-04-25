@@ -37,3 +37,17 @@ node --prof-process isoloate-{id}.log > process.txt
 生成的process.txt内容如下
 ![node+prof](../../assets/node+prof.png)
 图片可以看出大部分的时间花在`RegExp: ([a-z]+)+$`
+
+### cpu profile
+node是基于v8引擎的，同时v8暴露了一些profiler API,我们可以通过v8-profiler来收集一些运行时数据，缺点是因为v8-profiler只能通过js
+进行触发，这意味着一旦程序出现了死循环等情况，无法触发profile了.
+是node 12可以通过--cpu-profile 来支持生成profile，其他node版本可以通过v8-profiler模块来生成profile文件。
+```
+node --cpu-prof redos.js
+```
+其会自动生成`CPU.${yyyymmdd}.${hhmmss}.${pid}.${tid}.${seq}.cpuprofile`的文件，可以通过浏览器的javascript profile来读取该文件
+![v8-profiler](../../assets/v8-profiler.png)
+我们观察可得，99%的时间花在了`RegExp([a-z]+)+$`这个正则解析上。
+
+然而现在仍然不能通过信号来生成profile文件，相关issue https://github.com/nodejs/node/issues/24937，但是python等出现死循环通过^C是可以查看陷入死循环的程序的当前调用栈的。这算node的一个小缺陷吧。
+![python-loop](../../assets/python-loop.png)
