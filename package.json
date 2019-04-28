@@ -6,8 +6,11 @@
   "author": "hardfist <1562502418@qq.com>",
   "license": "MIT",
   "dependencies": {
+    "0x": "^4.8.2",
+    "autocannon": "^3.2.1",
     "delay": "^4.2.0",
     "randomstring": "^1.1.5",
+    "restify": "^8.3.1",
     "workerpool": "^3.1.2"
   }
 }
