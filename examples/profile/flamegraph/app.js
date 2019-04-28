@@ -12,7 +12,7 @@ function sleepB(ms) {
   while (Date.now() < future);
 }
 function a() {
-  for (let i = 0; i < 1e8; i++) {}
+  for (let i = 0; i < 1e3; i++) {}
 }
 function b() {
   for (let i = 0; i < 1e5; i++) {}
