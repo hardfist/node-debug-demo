@@ -21,6 +21,7 @@
     "randomstring": "^1.1.5",
     "restify": "^8.3.1",
     "v8-profiler-next": "^1.0.0",
+    "webworker-threads": "^0.7.17",
     "workerpool": "^3.1.2"
   }
 }
