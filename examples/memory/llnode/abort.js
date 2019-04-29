@@ -6,7 +6,7 @@ server = http.createServer(function myRequestListener(req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end('Hello World\n');
   if(req.url === '/bug'){
-    res.not_a_function()
+    process.abort();
   }
 }).listen(port, host);
 
