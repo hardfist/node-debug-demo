@@ -11,6 +11,7 @@
     "bluebird": "^3.5.4",
     "delay": "^4.2.0",
     "express": "^4.16.4",
+    "heap-profile": "^0.3.2",
     "heapdump": "^0.3.13",
     "jsdom": "^15.0.0",
     "koa": "^2.7.0",
