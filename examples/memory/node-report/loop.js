@@ -2,6 +2,7 @@
 // Note: node-report signal trigger is not supported on Windows
 require('node-report');
 var http = require("http");
+var PORT = 8080
 
 function my_listener(request, response) {
   switch (request.url) {
@@ -47,10 +48,10 @@ function MyRecord() {
 }
 
 var http_server = http.createServer(my_listener);
-http_server.listen(8080);
+http_server.listen(PORT);
 
 console.log('loop.js: Node running');
-console.log('loop.js: Go to http://<machine>:8080/ or http://localhost:8080/');
+console.log(`loop.js: Go to http://<machine>:${PORT}/ or http://localhost:${PORT}/`);
 
 setTimeout(function() {
   console.log('loop.js: timeout expired, exiting.');
