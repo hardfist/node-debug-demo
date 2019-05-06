@@ -84,3 +84,4 @@ typings/
 .dynamodb/
 
 *.0x/
+*.clinic-bubbleprof
