@@ -24,6 +24,7 @@ function leak2(){
 setInterval(function pushleak(){
   leak1();
   leak2();
+  leak1();
   heapProfile.write((err, filename) => {
     console.log(`heapProfile.write. err: ${err} filename: ${filename}`);
   });
